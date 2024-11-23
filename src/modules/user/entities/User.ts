@@ -10,7 +10,7 @@ interface UserSchema {
 }
 
 export class User {
-  props: UserSchema;
+  private props: UserSchema;
   _id: string;
 
   constructor(
