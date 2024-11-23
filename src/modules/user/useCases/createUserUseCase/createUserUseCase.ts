@@ -21,5 +21,7 @@ export class CreateUserUseCase {
     });
 
     await this.userRepository.create(user);
+
+    return user;
   }
 }
