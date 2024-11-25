@@ -7,4 +7,18 @@ export class NoteRepositoryInMemory implements NoteRepository {
   async create(note: Note): Promise<void> {
     this.notes.push(note);
   }
+
+  async findById(id: string): Promise<Note | null> {
+    const note = this.notes.find((note) => note.id === id);
+
+    if (!note) {
+      return null;
+    }
+
+    return note;
+  }
+
+  async delete(id: string): Promise<void> {
+    this.notes = this.notes.filter((note) => note.id !== id);
+  }
 }
