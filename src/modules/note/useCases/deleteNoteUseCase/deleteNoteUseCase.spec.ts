@@ -30,7 +30,7 @@ describe('Create Note', () => {
         noteId: 'fake_id',
         userId: 'fake_id',
       });
-    }).rejects.toThrowError(NotFoundException);
+    }).rejects.toThrow(NotFoundException);
   });
 
   it('Should be able to throw an error when note has another user', async () => {
